@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="XMLComtekGenerator.Views.CheckTransactionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XMLComtekGenerator.Views"
+             xmlns:vm="clr-namespace:XMLComtekGenerator.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance vm:CheckTransactionViewModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ContentControl Content="{Binding UpperPart}"></ContentControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer>
+                <Grid Height="600">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label>RRN</Label>
+                        <TextBox Grid.Row="1" Text="{Binding Rrn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label>DateTime</Label>
+                        <TextBox Grid.Row="1" 
+                             Text="{Binding DateTime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label>Password</Label>
+                        <TextBox Grid.Row="1"
+                             Text="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="1" 
+                            Content="Generate"
+                            Command="{Binding GenerateXmlCommand}"></Button>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+            <ScrollViewer Grid.Column="1">
+                <TextBox  
+                      IsReadOnly="True"
+                   Text="{Binding XmlResult}">
+
+                </TextBox>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

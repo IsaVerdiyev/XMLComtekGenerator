@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:XMLComtekGenerator.Resources"
+                    xmlns:vm="clr-namespace:XMLComtekGenerator.ViewModels"
+                    xmlns:v="clr-namespace:XMLComtekGenerator.Views"
+                    xmlns:vmsh="clr-namespace:XMLComtekGenerator.ViewModels.Shared"
+                    xmlns:vsh="clr-namespace:XMLComtekGenerator.Views.Shared">
+
+    <DataTemplate DataType="{x:Type vm:SearchBankViewModel}">
+        <v:SearchBankView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SearchLoansViewModel}">
+        <v:SearchLoansView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:PaymentViewModel}">
+        <v:PaymentView/>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:CheckTransactionViewModel}">
+        <v:CheckTransactionView/>
+    </DataTemplate>
+
+
+
+    <DataTemplate DataType="{x:Type vmsh:NavigationViewModel}">
+        <vsh:NavigationView/>
+    </DataTemplate>
+    
+</ResourceDictionary>
